@@ -30,11 +30,13 @@ while True:
         student_data["Science"] = marks_in_science 
         #Adding the data to the Main list
         student.append(student_data)
-        # print(student) #Displaying the final result to the user
+        print(f"{student_name}'s data has been added") #Displaying the final result to the user
+        print("---------")
     elif user_input == 2:
         #incase of no date present
         if len(student) == 0:
             print("No student data added!\nEnter the data then view the details again. ")
+            print("----------")
         else:
             for details in student:
                 
@@ -66,3 +68,4 @@ while True:
         break
     else:
         print("Invalid Input;\tPlease enter a correct number")
+        print("---------")
