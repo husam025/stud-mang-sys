@@ -2,8 +2,10 @@
 print(f"Welcome to Student Management System!")
 print("---------")
 student = []
+
 #Making an infinite loop menu
 while True:
+
     print("1.Add a new student")
     print("2.View the present student data")
     print("3.Search for a certain student's info")
@@ -11,8 +13,11 @@ while True:
     print("5.Delete user data")
     print("6.Exit")
     print("---------")
+
     user_input = int(input("Please select an option from 1-6 : "))
+    
     print("---------")
+
     if user_input == 1:
         #creating a list to store data inside
         student_data = {}
@@ -21,7 +26,7 @@ while True:
         student_rollnum = input(f"Enter the Roll Number of the student : ")
         marks_in_maths = int(input(f"Enter marks obtained by {student_name} in Maths : "))
         marks_in_english = int(input(f"Enter marks obtained by {student_name} in English : "))
-        marks_in_science = int(input(f"Enter marks obtained by {student_name} in Science :"))
+        marks_in_science = int(input(f"Enter marks obtained by {student_name} in Science : "))
         #Assigining pairs inside of the dict
         student_data["Name"] = student_name
         student_data["Roll no."] = student_rollnum
@@ -31,7 +36,9 @@ while True:
         #Adding the data to the Main list
         student.append(student_data)
         print(f"{student_name}'s data has been added") #Displaying the final result to the user
+        print(student_data)
         print("---------")
+        print(student)
     elif user_input == 2:
         #incase of no date present
         if len(student) == 0:
@@ -58,8 +65,18 @@ while True:
                 else:
                     print(f"Remark : Need Improvement")
                 print("--- ---")
+
     elif user_input == 3:
-        pass
+        
+        inp_find = input("Enter the full name of the students : ").strip().title()
+        
+        print("----------")
+
+        # for name in :
+        
+            # else:
+            #     print("Student not found! Check the name or try again.")
+
     elif user_input == 4:
         pass
     elif user_input == 5:
