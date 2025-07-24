@@ -12,6 +12,7 @@ while True:
     print("4.Update existing details")
     print("5.Delete user data")
     print("6.Exit")
+    
     print("---------")
 
     user_input = int(input("Please select an option from 1-6 : "))
@@ -37,12 +38,16 @@ while True:
         student.append(student_data)
         print(f"{student_name}'s data has been added") #Displaying the final result to the user
         print(student_data)
+
         print("---------")
+        
         print(student)
+
     elif user_input == 2:
         #incase of no date present
         if len(student) == 0:
             print("No student data added!\nEnter the data then view the details again. ")
+
             print("----------")
         else:
             for details in student:
@@ -51,11 +56,15 @@ while True:
                 english = details["English"]
                 science = details["Science"]
                 #Calculation for Average and total Marks
+
                 total = maths+english+science
                 average_marks = round(total/3,2)
                 print(f'''The student "{details["Name"]}" has obtained a total of {total} marks in all subjects\nand an average of {average_marks}''')
+                
                 print("--- ---")
+                
                 #Remarks
+                
                 if average_marks >= 90:
                     print(f"Remark : Excellent marks")
                 elif average_marks <90 and average_marks >=75:
@@ -64,6 +73,7 @@ while True:
                     print(f"Remark : Average marks")
                 else:
                     print(f"Remark : Need Improvement")
+
                 print("--- ---")
 
     elif user_input == 3:
@@ -85,4 +95,5 @@ while True:
         break
     else:
         print("Invalid Input;\tPlease enter a correct number")
+
         print("---------")
