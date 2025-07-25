@@ -37,11 +37,9 @@ while True:
         #Adding the data to the Main list
         student.append(student_data)
         print(f"{student_name}'s data has been added") #Displaying the final result to the user
-        print(student_data)
-
+        
         print("---------")
         
-        print(student)
 
     elif user_input == 2:
         #incase of no date present
@@ -81,11 +79,27 @@ while True:
         inp_find = input("Enter the full name of the students : ").strip().title()
         
         print("----------")
-
-        # for name in :
         
-            # else:
-            #     print("Student not found! Check the name or try again.")
+        #Setting a flag
+        found = False
+        
+        for details in student:
+            
+            if details['Name'].lower() == inp_find.lower():
+                found = True
+                #Defining variables for Total and average
+                maths = details["Maths"]
+                english = details["English"]
+                science = details["Science"]
+                
+                #Total And Average
+                total = maths+english+science
+                average_marks = round(total/3,2)
+                print(f"Name : {details['Name']}\nRoll Number : {details["Roll no."]}\nMarks in each subject\n**********\nMaths : {details["Maths"]}\nEnglish : {details["English"]}\nScience : {details["Science"]}\n**********\nTotal = {total}\nAverage = {average_marks}\n----------")
+                
+        
+        if not found:
+            print("Student not found! Check the name or try again.")
 
     elif user_input == 4:
         pass
@@ -97,5 +111,4 @@ while True:
         print("Invalid Input;\tPlease enter a correct number")
 
         print("---------")
-        #100
-        
+     
