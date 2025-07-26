@@ -118,8 +118,8 @@ while True:
 
                 #taking the update
                 maths_update = input(f"Maths ({maths}) New Marks or press Enter to keep : ").strip()
-                english_update = input(f"English ({english}) New Marks or press Enter to keep : ")
-                science_update = input(f"Science ({science}) New Marks or press Enter to keep : ")
+                english_update = input(f"English ({english}) New Marks or press Enter to keep : ").strip()
+                science_update = input(f"Science ({science}) New Marks or press Enter to keep : ").strip()
                 print("----------")
 
                 #Updating
