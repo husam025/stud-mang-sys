@@ -1,7 +1,8 @@
 #Greeting the user
 print(f"Welcome to Student Management System!")
 print("---------")
-student = []
+student = [{'Name': 'abc', 'Roll no.': '1', 'Maths': 100, 'English': 100, 'Science': 100}, 
+           {'Name': 'xyz', 'Roll no.': '2', 'Maths': 88, 'English': 99, 'Science': 80}]
 
 #Making an infinite loop menu
 while True:
@@ -102,7 +103,45 @@ while True:
             print("Student not found! Check the name or try again.")
 
     elif user_input == 4:
-        pass
+        inp_roll = input("Enter the Students Roll no to update : ")
+        print("----------")
+        #flag
+        found1 = False
+        for students in student:
+            if students["Roll no."] == inp_roll:
+                found1 = True
+                maths = students["Maths"]
+                english = students["English"]
+                science = students["Science"]
+                print(f"Current Marks\n \nMaths = {maths}\nEnglish = {english}\nScience = {science}")
+                print("----------")
+
+                #taking the update
+                maths_update = input(f"Maths ({maths}) New Marks or press Enter to keep : ").strip()
+                english_update = input(f"English ({english}) New Marks or press Enter to keep : ")
+                science_update = input(f"Science ({science}) New Marks or press Enter to keep : ")
+                print("----------")
+
+                #Updating
+
+                if maths_update != "":
+                    maths_update = int(maths_update)
+                    students.update({"Maths": maths_update})
+                if english_update != "":
+                    english_update = int(english_update)
+                    students.update({"English": english_update})
+                if science_update != "":
+                    science_update = int(science_update)
+                    students.update({"Science": science_update})
+
+                print("Marks updated successfully!")
+                
+                print("----------")
+                
+        if not found1:
+            print("Roll no is invalid.\nPlease check the Student Details and try again!")
+            print("----------")
+    
     elif user_input == 5:
         pass
     elif user_input == 6:
