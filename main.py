@@ -123,13 +123,14 @@ while True:
                 print("----------")
 
                 #Updating
-
                 if maths_update != "":
                     maths_update = int(maths_update)
                     students.update({"Maths": maths_update})
+
                 if english_update != "":
                     english_update = int(english_update)
                     students.update({"English": english_update})
+                    
                 if science_update != "":
                     science_update = int(science_update)
                     students.update({"Science": science_update})
@@ -143,9 +144,35 @@ while True:
             print("----------")
     
     elif user_input == 5:
-        pass
+        del_user = input("Enter the Roll no of student to Delete : ")
+        print("----------")
+        found3 = False
+        for students in student:
+            if students['Roll no.'] == del_user:
+                confirmation = input(f"Are you sure you want to delete {students['Name']}'s data? (Press 'y' to continue or 'n' to cancel) : ").lower()
+                print("----------")
+
+                if confirmation == 'n':
+                    pass
+                
+                elif confirmation == 'y':
+                    student.remove(students)
+                    print(f"{students["Name"]}'s data has been deleted")
+                    print("----------")
+                    found3 = True
+                
+                else:
+                    print("{del_user} is an incorrect input enter 'y' or 'n' ")
+                    print("----------")
+        
+        if not found3:
+            print("Student not found")
+            print("----------")
+    
     elif user_input == 6:
+        print("Thank you for using the Student Management System!")
         break
+    
     else:
         print("Invalid Input;\tPlease enter a correct number")
 
