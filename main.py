@@ -4,6 +4,8 @@ print("---------")
 student = [{'Name': 'abc', 'Roll no.': '1', 'Maths': 100, 'English': 100, 'Science': 100}, 
            {'Name': 'xyz', 'Roll no.': '2', 'Maths': 88, 'English': 99, 'Science': 80}]
 
+# with open('student.txt','w') as student:
+
 #Making an infinite loop menu
 while True:
 
